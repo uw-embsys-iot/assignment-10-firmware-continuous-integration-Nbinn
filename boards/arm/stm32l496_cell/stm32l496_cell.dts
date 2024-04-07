@@ -1,0 +1,68 @@
+/*
+ * Copyright (c) 2017 Linaro Limited
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/dts-v1/;
+#include <st/l4/stm32l496Xg.dtsi>
+#include <st/l4/stm32l496a(e-g)ix-pinctrl.dtsi>
+#include "arduino_r3_connector.dtsi"
+
+/ {
+	model = "STMicroelectronics STM32L496G-DISCO board with modem";
+	compatible = "st,stm32l496-cell";
+
+	chosen {
+		/* IOTEMBSYS2: Choose usart2 for zephyr,console and zephyr,shell-uart once configured. */
+		zephyr,sram = &sram0;
+		zephyr,flash = &flash0;
+	};
+
+	leds {
+		compatible = "gpio-leds";
+		green_led_2: led_2 {
+			gpios = <&gpiob 13 GPIO_ACTIVE_HIGH>;
+			label = "User LD2";
+		};
+	};
+
+	/* IOTEMBSYS2: Add gpio_keys node with all joystick pins */
+
+	/* IOTEMBSYS2: Create aliases for joysticks, if desired. */
+	aliases {
+		led0 = &green_led_2;
+	};
+};
+
+&clk_lsi {
+	status = "okay";
+};
+
+&clk_hsi48 {
+	status = "okay";
+};
+
+&clk_hsi {
+	status = "okay";
+};
+
+&pll {
+	div-m = <1>;
+	mul-n = <20>;
+	div-p = <7>;
+	div-q = <2>;
+	div-r = <4>;
+	clocks = <&clk_hsi>;
+	status = "okay";
+};
+
+&rcc {
+	clocks = <&pll>;
+	clock-frequency = <DT_FREQ_M(80)>;
+	ahb-prescaler = <1>;
+	apb1-prescaler = <1>;
+	apb2-prescaler = <1>;
+};
+
+/* IOTEMBSYS2: Add the USART2 node */
