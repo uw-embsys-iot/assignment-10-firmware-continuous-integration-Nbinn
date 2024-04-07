@@ -1,0 +1,38 @@
+name: Build
+
+on: [pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: zephyrprojectrtos/ci:latest
+    env:
+      CMAKE_PREFIX_PATH: /opt/toolchains
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          path: embsys-firmware
+
+      - name: Initialize
+        working-directory: embsys-firmware
+        run: |
+          west init -l .
+          west update
+
+      - name: Build firmware
+        working-directory: embsys-firmware
+        run: |
+          west build -b stm32l496_cell app
+
+      - name: Twister Tests
+        working-directory: embsys-firmware
+        shell: bash
+        run: |
+          west twister -T tests -v --inline-logs --integration
+
+      - name: Archive firmware
+        uses: actions/upload-artifact@v2
+        with:
+          name: firmware
+          path: embsys-firmware/build/zephyr/zephyr.*
