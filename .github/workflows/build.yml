@@ -26,6 +26,7 @@ jobs:
           west init -l .
           west update
 
+          
       # IOTEMBSYS10: Add a step to build the application
       - name: Build firmware
         working-directory: firmware_space
