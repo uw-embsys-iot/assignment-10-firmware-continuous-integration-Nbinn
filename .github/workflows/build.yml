@@ -1,0 +1,21 @@
+name: Build
+
+# IOTEMBSYS10: Change this to only apply to specific branches, if desired
+on: [pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: zephyrprojectrtos/ci:latest
+    env:
+      CMAKE_PREFIX_PATH: /opt/toolchains
+    steps:
+      # IOTEMBSYS10: Add a step to checkout the repo
+      - name: Checkout
+        run: echo "Not a real checkout. This job's status is ${{ job.status }}."
+
+      # IOTEMBSYS10: Add a step to initialize the west workspace
+
+      # IOTEMBSYS10: Add a step to build the application
+
+      # IOTEMBSYS10: Add a step to run the unit tests with twister
