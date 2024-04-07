@@ -20,6 +20,9 @@ LOG_MODULE_REGISTER(main, CONFIG_APP_LOG_LEVEL);
 #include <pb_decode.h>
 #include "api/api.pb.h"
 
+/* IOTEMBSYS: Add header for stats */
+#include <zephyr/stats/stats.h>
+
 #include <stdlib.h>
 #include <stdio.h>
 #include "app_version.h"
@@ -27,6 +30,22 @@ LOG_MODULE_REGISTER(main, CONFIG_APP_LOG_LEVEL);
 // Helper for converting macros into strings
 #define str(s) #s
 #define xstr(s) str(s)
+
+/* IOTEMBSYS: Stats sections and entries declarations. */
+/* Define an example stats group; approximates seconds since boot. */
+STATS_SECT_START(app_stats)
+STATS_SECT_ENTRY(ticks)
+STATS_SECT_ENTRY(button_press_count)
+STATS_SECT_END;
+
+/* Assign a name to the `ticks` stat. */
+STATS_NAME_START(app_stats)
+STATS_NAME(app_stats, ticks)
+STATS_NAME(app_stats, button_press_count)
+STATS_NAME_END(app_stats);
+
+/* Define an instance of the stats group. */
+STATS_SECT_DECL(app_stats) app_stats;
 
 /* 1000 msec = 1 sec */
 #define DEFAULT_SLEEP_TIME_MS   1000
@@ -147,6 +166,8 @@ static void button_pressed(const struct device *dev, struct gpio_callback *cb,
 		    uint32_t pins) {
 	printk("Button %d pressed at %" PRIu32 "\n", pins, k_cycle_get_32());
 	k_msleep(100);
+
+	STATS_INC(app_stats, button_press_count);
 
 	uint32_t interval_ms = 0;
 	if (pins == BIT(sw0.pin)) {
@@ -355,7 +376,7 @@ static void generic_http_request(void) {
 
 // You will need to change this to match your host
 // WARNING: This will change with each new EC2 instance!
-#define EC2_HOST "ec2-54-167-81-5.compute-1.amazonaws.com"
+#define EC2_HOST "ec2-34-224-91-168.compute-1.amazonaws.com"
 #define BACKEND_PORT 8080
 #define BACKEND_HOST EC2_HOST ":8080"
 static struct addrinfo* backend_addr_;
@@ -379,6 +400,15 @@ static bool encode_status_update_request(uint8_t *buffer, size_t buffer_size, si
 
 	/* Fill in the reboot count */
 	message.boot_count = boot_count;
+
+	/* IOTEMBSYS: Fill out app stats. */
+	message.uptime_ticks = k_uptime_get();
+	strncpy(message.device_id, kDeviceId, sizeof(message.device_id));
+
+	// TODO(mskobov): Get RTC value
+	message.has_app_stats = true;
+	message.app_stats.ticks = app_stats.ticks;
+	message.app_stats.button_press_count = app_stats.button_press_count;
 
 	/* Now we are ready to encode the message! */
 	status = pb_encode(&stream, StatusUpdateRequest_fields, &message);
@@ -861,6 +891,13 @@ void main(void)
     settings_register(&my_conf);
     settings_load();
 
+	/* IOTEMBSYS: Initialize stats subsystem. */
+	ret = STATS_INIT_AND_REG(app_stats, STATS_SIZE_32,
+				    "app_stats");
+	if (ret < 0) {
+		return;
+	}
+
 	/* IOTEMBSYS: Increment boot count. */
 	boot_count++;
     settings_save_one("provisioning/boot_count", &boot_count, sizeof(boot_count));
@@ -887,6 +924,7 @@ void main(void)
 		if (ret < 0) {
 			return;
 		}
+		STATS_INC(app_stats, ticks);
 		k_msleep(blink_interval_);
 	}
 }
