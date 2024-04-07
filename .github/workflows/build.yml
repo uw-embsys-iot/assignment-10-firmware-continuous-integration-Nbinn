@@ -1,6 +1,10 @@
 name: Build
 
-on: [pull_request]
+# IOTEMBSYS10: Change this to only apply to specific branches, if desired
+on: 
+  pull_request:
+    branches:
+      - a*
 
 jobs:
   build:
@@ -9,30 +13,28 @@ jobs:
     env:
       CMAKE_PREFIX_PATH: /opt/toolchains
     steps:
+      # IOTEMBSYS10: Add a step to checkout the repo
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          path: embsys-firmware
-
+          path: firmware_space
+      
+      # IOTEMBSYS10: Add a step to initialize the west workspace
       - name: Initialize
-        working-directory: embsys-firmware
+        working-directory: firmware_space
         run: |
           west init -l .
           west update
 
+      # IOTEMBSYS10: Add a step to build the application
       - name: Build firmware
-        working-directory: embsys-firmware
+        working-directory: firmware_space
         run: |
           west build -b stm32l496_cell app
 
+      # IOTEMBSYS10: Add a step to run the unit tests with twister
       - name: Twister Tests
         working-directory: embsys-firmware
         shell: bash
         run: |
           west twister -T tests -v --inline-logs --integration
-
-      - name: Archive firmware
-        uses: actions/upload-artifact@v2
-        with:
-          name: firmware
-          path: embsys-firmware/build/zephyr/zephyr.*
