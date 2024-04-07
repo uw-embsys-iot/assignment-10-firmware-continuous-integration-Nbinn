@@ -1,0 +1,4 @@
+// To keep things simple, the entire API will be in a single file.
+syntax = "proto3";
+
+// IOTEMBSYS7: Define the IDL here
