@@ -903,7 +903,7 @@ void main(void)
     settings_save_one("provisioning/boot_count", &boot_count, sizeof(boot_count));
 
     LOG_INF("boot_count: %d\n", boot_count);
-
+	LOG_INF("Version: 1.1");
 	/* IOTEMBSYS: Configure joystick GPIOs. */
 	init_joystick_gpio(&sw0, &button_cb_data_0);
 	init_joystick_gpio(&sw1, &button_cb_data_1);
