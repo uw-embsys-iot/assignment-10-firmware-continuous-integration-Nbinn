@@ -24,13 +24,12 @@ jobs:
           west init -l .
           west update
 
-          
       # IOTEMBSYS10: Add a step to build the application
       - name: Build firmware
         working-directory: firmware_space
         run: |
           west build -b stm32l496_cell app
-
+          
       # IOTEMBSYS10: Add a step to run the unit tests with twister
       - name: Twister Tests
         working-directory: firmware_space
