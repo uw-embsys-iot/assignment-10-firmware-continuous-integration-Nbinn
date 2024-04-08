@@ -33,7 +33,7 @@ jobs:
 
       # IOTEMBSYS10: Add a step to run the unit tests with twister
       - name: Twister Tests
-        working-directory: embsys-firmware
+        working-directory: firmware_space
         shell: bash
         run: |
           west twister -T tests -v --inline-logs --integration
