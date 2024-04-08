@@ -20,5 +20,5 @@
  * @returns CONFIG_CUSTOM_LIB_GET_VALUE_DEFAULT if parameter is zero
  */
 int custom_lib_get_value(int return_value_if_nonzero);
-
+int custom_lib_add_two_number(int number_1, int number_2);
 #endif /* EXAMPLE_APPLICATION_INCLUDE_CUSTOM_LIB_CUSTOM_LIB_H_ */

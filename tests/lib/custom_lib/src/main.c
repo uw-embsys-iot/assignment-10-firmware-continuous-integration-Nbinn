@@ -42,15 +42,15 @@ ZTEST(custom_lib,test_add_two_number)
 {
 	zassert_equal(custom_lib_add_two_number(1,1), 2,
 		"Adding 2 positivenumbers failed");
-	zassert_equal(custom_lib_get_value(1, -1), 0,
+	zassert_equal(custom_lib_add_two_number(1, -1), 0,
 		"Adding 2 positive and negative numbers failed");
-	zassert_equal(custom_lib_get_value(-1,1), 0,
+	zassert_equal(custom_lib_add_two_number(-1,1), 0,
 		"Adding 2 negative and positive numbers failed");
-	zassert_equal(custom_lib_get_value(1,0), 1,
+	zassert_equal(custom_lib_add_two_number(1,0), 1,
 		"Adding positive numbers and zero failed");
-	zassert_equal(custom_lib_get_value( -1,0), -1,
+	zassert_equal(custom_lib_add_two_number( -1,0), -1,
 		"Adding negative numbers and zero failed");
-	zassert_equal(custom_lib_get_value(0,0), 0,
+	zassert_equal(custom_lib_add_two_number(0, 0), 0,
 		"Adding 2 zero numbers failed");
 }
 
