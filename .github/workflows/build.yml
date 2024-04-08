@@ -1,10 +1,8 @@
 name: Build
 
 # IOTEMBSYS10: Change this to only apply to specific branches, if desired
-on: 
-  pull_request:
-    branches:
-      - a*
+on: [pull_request]
+
 
 jobs:
   build:
