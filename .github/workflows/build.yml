@@ -28,7 +28,7 @@ jobs:
       - name: Build firmware
         working-directory: firmware_space
         run: |
-          west build -p -b stm32l496_cell app -- -DEXTRA_CONF_FILE="mcumgr.conf" -DCONFIG_MCUBOOT_SIGNATURE_KEY_FILE=\"./conf/root-rsa-2048.pem\"
+          west build -p -b stm32l496_cell app -- -DEXTRA_CONF_FILE="mcumgr.conf" -DCONFIG_MCUBOOT_SIGNATURE_KEY_FILE=\"firmware_space/conf/root-rsa-2048.pem\"
 
 
           
