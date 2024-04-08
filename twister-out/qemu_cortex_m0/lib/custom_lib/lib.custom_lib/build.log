@@ -1,0 +1,170 @@
+Loading Zephyr default modules (Zephyr base).
+-- Application: D:/UW_assignment/firmware_workspace/assignment_10/tests/lib/custom_lib
+-- CMake version: 3.28.3
+-- Found Python3: C:/Users/ThoNhan/AppData/Local/Programs/Python/Python312/python.exe (found suitable exact version "3.12.2") found components: Interpreter 
+-- Cache files will be written to: D:/UW_assignment/firmware_workspace/zephyr/.cache
+-- Zephyr version: 3.4.0-rc1 (D:/UW_assignment/firmware_workspace/zephyr)
+-- Found west (found suitable version "1.2.0", minimum required is "0.14.0")
+-- Board: qemu_cortex_m0
+-- ZEPHYR_TOOLCHAIN_VARIANT not set, trying to locate Zephyr SDK
+-- Found host-tools: zephyr 0.16.4 (C:/Users/ThoNhan/zephyr-sdk-0.16.4)
+-- Found toolchain: zephyr 0.16.4 (C:/Users/ThoNhan/zephyr-sdk-0.16.4)
+-- Found Dtc: C:/ProgramData/chocolatey/bin/dtc.exe (found suitable version "1.5.0", minimum required is "1.4.6") 
+-- Found BOARD.dts: D:/UW_assignment/firmware_workspace/zephyr/boards/arm/qemu_cortex_m0/qemu_cortex_m0.dts
+-- Generated zephyr.dts: D:/UW_assignment/firmware_workspace/assignment_10/twister-out/qemu_cortex_m0/lib/custom_lib/lib.custom_lib/zephyr/zephyr.dts
+-- Generated devicetree_generated.h: D:/UW_assignment/firmware_workspace/assignment_10/twister-out/qemu_cortex_m0/lib/custom_lib/lib.custom_lib/zephyr/include/generated/devicetree_generated.h
+-- Including generated dts.cmake file: D:/UW_assignment/firmware_workspace/assignment_10/twister-out/qemu_cortex_m0/lib/custom_lib/lib.custom_lib/zephyr/dts.cmake
+Parsing D:/UW_assignment/firmware_workspace/zephyr/Kconfig
+Loaded configuration 'D:/UW_assignment/firmware_workspace/zephyr/boards/arm/qemu_cortex_m0/qemu_cortex_m0_defconfig'
+Merged configuration 'D:/UW_assignment/firmware_workspace/assignment_10/tests/lib/custom_lib/prj.conf'
+Merged configuration 'D:/UW_assignment/firmware_workspace/assignment_10/twister-out/qemu_cortex_m0/lib/custom_lib/lib.custom_lib/zephyr/misc/generated/extra_kconfig_options.conf'
+Configuration saved to 'D:/UW_assignment/firmware_workspace/assignment_10/twister-out/qemu_cortex_m0/lib/custom_lib/lib.custom_lib/zephyr/.config'
+Kconfig header saved to 'D:/UW_assignment/firmware_workspace/assignment_10/twister-out/qemu_cortex_m0/lib/custom_lib/lib.custom_lib/zephyr/include/generated/autoconf.h'
+-- Found GnuLd: c:/users/thonhan/zephyr-sdk-0.16.4/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/bin/ld.bfd.exe (found version "2.38") 
+-- The C compiler identification is GNU 12.2.0
+-- The CXX compiler identification is GNU 12.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: C:/Users/ThoNhan/zephyr-sdk-0.16.4/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc.exe
+-- Configuring done (58.3s)
+-- Generating done (0.5s)
+-- Build files have been written to: D:/UW_assignment/firmware_workspace/assignment_10/twister-out/qemu_cortex_m0/lib/custom_lib/lib.custom_lib
+[1/163] Generating include/generated/version.h
+-- Zephyr version: 3.4.0-rc1 (D:/UW_assignment/firmware_workspace/zephyr), build: v3.4.0-rc1
+[2/163] Generating misc/generated/syscalls.json, misc/generated/struct_tags.json
+[3/163] Generating include/generated/syscall_dispatch.c, include/generated/syscall_list.h
+[4/163] Generating include/generated/kobj-types-enum.h, include/generated/otype-to-str.h, include/generated/otype-to-size.h
+[5/163] Generating include/generated/driver-validation.h
+[6/163] Building C object zephyr/CMakeFiles/offsets.dir/arch/arm/core/offsets/offsets.c.obj
+[7/163] Generating include/generated/offsets.h
+[8/163] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/sem.c.obj
+[9/163] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/dec.c.obj
+[10/163] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/hex.c.obj
+[11/163] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/printk.c.obj
+[12/163] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/fdtable.c.obj
+[13/163] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/thread_entry.c.obj
+[14/163] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/timeutil.c.obj
+[15/163] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/rb.c.obj
+[16/163] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/cbprintf_packaged.c.obj
+[17/163] Building C object CMakeFiles/app.dir/src/main.c.obj
+FAILED: CMakeFiles/app.dir/src/main.c.obj 
+C:\Users\ThoNhan\zephyr-sdk-0.16.4\arm-zephyr-eabi\bin\arm-zephyr-eabi-gcc.exe -DKERNEL -DNRF51 -DNRF51422_XXAA -DTC_RUNID=a37cf6f8b5639394d65f3dd0379f5414 -D__PROGRAM_START -D__ZEPHYR__=1 -ID:/UW_assignment/firmware_workspace/zephyr/include -ID:/UW_assignment/firmware_workspace/assignment_10/twister-out/qemu_cortex_m0/lib/custom_lib/lib.custom_lib/zephyr/include/generated -ID:/UW_assignment/firmware_workspace/zephyr/soc/arm/nordic_nrf/nrf51 -ID:/UW_assignment/firmware_workspace/zephyr/soc/arm/nordic_nrf/common/. -ID:/UW_assignment/firmware_workspace/zephyr/subsys/testsuite/include -ID:/UW_assignment/firmware_workspace/zephyr/subsys/testsuite/ztest/include -ID:/UW_assignment/firmware_workspace/assignment_9/include -ID:/UW_assignment/firmware_workspace/modules/hal/cmsis/CMSIS/Core/Include -ID:/UW_assignment/firmware_workspace/modules/hal/nordic/nrfx -ID:/UW_assignment/firmware_workspace/modules/hal/nordic/nrfx/drivers/include -ID:/UW_assignment/firmware_workspace/modules/hal/nordic/nrfx/mdk -ID:/UW_assignment/firmware_workspace/zephyr/modules/hal_nordic/nrfx/. -isystem D:/UW_assignment/firmware_workspace/zephyr/lib/libc/minimal/include -isystem c:/users/thonhan/zephyr-sdk-0.16.4/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include -isystem c:/users/thonhan/zephyr-sdk-0.16.4/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed -fno-strict-aliasing -Werror -Os -imacros D:/UW_assignment/firmware_workspace/assignment_10/twister-out/qemu_cortex_m0/lib/custom_lib/lib.custom_lib/zephyr/include/generated/autoconf.h -ffreestanding -fno-common -g -gdwarf-4 -fdiagnostics-color=always -mcpu=cortex-m0 -mthumb -mabi=aapcs -mfp16-format=ieee --sysroot=C:/Users/ThoNhan/zephyr-sdk-0.16.4/arm-zephyr-eabi/arm-zephyr-eabi -imacros D:/UW_assignment/firmware_workspace/zephyr/include/zephyr/toolchain/zephyr_stdint.h -Wall -Wformat -Wformat-security -Wno-format-zero-length -Wno-pointer-sign -Wpointer-arith -Wexpansion-to-defined -Wno-unused-but-set-variable -Werror=implicit-int -fno-pic -fno-pie -fno-asynchronous-unwind-tables -fno-reorder-functions --param=min-pagesize=0 -fno-defer-pop -fmacro-prefix-map=D:/UW_assignment/firmware_workspace/assignment_10/tests/lib/custom_lib=CMAKE_SOURCE_DIR -fmacro-prefix-map=D:/UW_assignment/firmware_workspace/zephyr=ZEPHYR_BASE -fmacro-prefix-map=D:/UW_assignment/firmware_workspace=WEST_TOPDIR -ffunction-sections -fdata-sections -std=c99 -nostdinc -MD -MT CMakeFiles/app.dir/src/main.c.obj -MF CMakeFiles\app.dir\src\main.c.obj.d -o CMakeFiles/app.dir/src/main.c.obj -c D:/UW_assignment/firmware_workspace/assignment_10/tests/lib/custom_lib/src/main.c
+In file included from D:/UW_assignment/firmware_workspace/zephyr/subsys/testsuite/ztest/include/zephyr/ztest.h:49,
+                 from D:/UW_assignment/firmware_workspace/assignment_10/tests/lib/custom_lib/src/main.c:16:
+D:/UW_assignment/firmware_workspace/assignment_10/tests/lib/custom_lib/src/main.c: In function 'custom_lib_test_add_two_number':
+D:/UW_assignment/firmware_workspace/assignment_10/tests/lib/custom_lib/src/main.c:43:23: error: implicit declaration of function 'custom_lib_add_two_number'; did you mean 'custom_lib_test_add_two_number'? [-Werror=implicit-function-declaration]
+   43 |         zassert_equal(custom_lib_add_two_number(1,1), 2,
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~
+D:/UW_assignment/firmware_workspace/zephyr/subsys/testsuite/ztest/include/zephyr/ztest_assert.h:175:39: note: in definition of macro '_zassert_base'
+  175 |                 bool _ret = z_zassert(cond, _msg ? ("(" default_msg ")") : (default_msg), __FILE__,\
+      |                                       ^~~~
+D:/UW_assignment/firmware_workspace/zephyr/subsys/testsuite/ztest/include/zephyr/ztest_assert.h:189:9: note: in expansion of macro '_zassert_va'
+  189 |         _zassert_va(cond, default_msg, COND_CODE_1(__VA_OPT__(1), (__VA_ARGS__), (NULL)))
+      |         ^~~~~~~~~~~
+D:/UW_assignment/firmware_workspace/zephyr/subsys/testsuite/ztest/include/zephyr/ztest_assert.h:308:34: note: in expansion of macro 'zassert'
+  308 | #define zassert_equal(a, b, ...) zassert((a) == (b), #a " not equal to " #b, ##__VA_ARGS__)
+      |                                  ^~~~~~~
+D:/UW_assignment/firmware_workspace/assignment_10/tests/lib/custom_lib/src/main.c:43:9: note: in expansion of macro 'zassert_equal'
+   43 |         zassert_equal(custom_lib_add_two_number(1,1), 2,
+      |         ^~~~~~~~~~~~~
+D:/UW_assignment/firmware_workspace/assignment_10/tests/lib/custom_lib/src/main.c:45:23: error: too many arguments to function 'custom_lib_get_value'
+   45 |         zassert_equal(custom_lib_get_value(1, -1), 0,
+      |                       ^~~~~~~~~~~~~~~~~~~~
+D:/UW_assignment/firmware_workspace/zephyr/subsys/testsuite/ztest/include/zephyr/ztest_assert.h:175:39: note: in definition of macro '_zassert_base'
+  175 |                 bool _ret = z_zassert(cond, _msg ? ("(" default_msg ")") : (default_msg), __FILE__,\
+      |                                       ^~~~
+D:/UW_assignment/firmware_workspace/zephyr/subsys/testsuite/ztest/include/zephyr/ztest_assert.h:189:9: note: in expansion of macro '_zassert_va'
+  189 |         _zassert_va(cond, default_msg, COND_CODE_1(__VA_OPT__(1), (__VA_ARGS__), (NULL)))
+      |         ^~~~~~~~~~~
+D:/UW_assignment/firmware_workspace/zephyr/subsys/testsuite/ztest/include/zephyr/ztest_assert.h:308:34: note: in expansion of macro 'zassert'
+  308 | #define zassert_equal(a, b, ...) zassert((a) == (b), #a " not equal to " #b, ##__VA_ARGS__)
+      |                                  ^~~~~~~
+D:/UW_assignment/firmware_workspace/assignment_10/tests/lib/custom_lib/src/main.c:45:9: note: in expansion of macro 'zassert_equal'
+   45 |         zassert_equal(custom_lib_get_value(1, -1), 0,
+      |         ^~~~~~~~~~~~~
+In file included from D:/UW_assignment/firmware_workspace/assignment_10/tests/lib/custom_lib/src/main.c:18:
+D:/UW_assignment/firmware_workspace/assignment_9/include/custom_lib/custom_lib.h:22:5: note: declared here
+   22 | int custom_lib_get_value(int return_value_if_nonzero);
+      |     ^~~~~~~~~~~~~~~~~~~~
+D:/UW_assignment/firmware_workspace/assignment_10/tests/lib/custom_lib/src/main.c:47:23: error: too many arguments to function 'custom_lib_get_value'
+   47 |         zassert_equal(custom_lib_get_value(-1,1), 0,
+      |                       ^~~~~~~~~~~~~~~~~~~~
+D:/UW_assignment/firmware_workspace/zephyr/subsys/testsuite/ztest/include/zephyr/ztest_assert.h:175:39: note: in definition of macro '_zassert_base'
+  175 |                 bool _ret = z_zassert(cond, _msg ? ("(" default_msg ")") : (default_msg), __FILE__,\
+      |                                       ^~~~
+D:/UW_assignment/firmware_workspace/zephyr/subsys/testsuite/ztest/include/zephyr/ztest_assert.h:189:9: note: in expansion of macro '_zassert_va'
+  189 |         _zassert_va(cond, default_msg, COND_CODE_1(__VA_OPT__(1), (__VA_ARGS__), (NULL)))
+      |         ^~~~~~~~~~~
+D:/UW_assignment/firmware_workspace/zephyr/subsys/testsuite/ztest/include/zephyr/ztest_assert.h:308:34: note: in expansion of macro 'zassert'
+  308 | #define zassert_equal(a, b, ...) zassert((a) == (b), #a " not equal to " #b, ##__VA_ARGS__)
+      |                                  ^~~~~~~
+D:/UW_assignment/firmware_workspace/assignment_10/tests/lib/custom_lib/src/main.c:47:9: note: in expansion of macro 'zassert_equal'
+   47 |         zassert_equal(custom_lib_get_value(-1,1), 0,
+      |         ^~~~~~~~~~~~~
+D:/UW_assignment/firmware_workspace/assignment_9/include/custom_lib/custom_lib.h:22:5: note: declared here
+   22 | int custom_lib_get_value(int return_value_if_nonzero);
+      |     ^~~~~~~~~~~~~~~~~~~~
+D:/UW_assignment/firmware_workspace/assignment_10/tests/lib/custom_lib/src/main.c:49:23: error: too many arguments to function 'custom_lib_get_value'
+   49 |         zassert_equal(custom_lib_get_value(1,0), 1,
+      |                       ^~~~~~~~~~~~~~~~~~~~
+D:/UW_assignment/firmware_workspace/zephyr/subsys/testsuite/ztest/include/zephyr/ztest_assert.h:175:39: note: in definition of macro '_zassert_base'
+  175 |                 bool _ret = z_zassert(cond, _msg ? ("(" default_msg ")") : (default_msg), __FILE__,\
+      |                                       ^~~~
+D:/UW_assignment/firmware_workspace/zephyr/subsys/testsuite/ztest/include/zephyr/ztest_assert.h:189:9: note: in expansion of macro '_zassert_va'
+  189 |         _zassert_va(cond, default_msg, COND_CODE_1(__VA_OPT__(1), (__VA_ARGS__), (NULL)))
+      |         ^~~~~~~~~~~
+D:/UW_assignment/firmware_workspace/zephyr/subsys/testsuite/ztest/include/zephyr/ztest_assert.h:308:34: note: in expansion of macro 'zassert'
+  308 | #define zassert_equal(a, b, ...) zassert((a) == (b), #a " not equal to " #b, ##__VA_ARGS__)
+      |                                  ^~~~~~~
+D:/UW_assignment/firmware_workspace/assignment_10/tests/lib/custom_lib/src/main.c:49:9: note: in expansion of macro 'zassert_equal'
+   49 |         zassert_equal(custom_lib_get_value(1,0), 1,
+      |         ^~~~~~~~~~~~~
+D:/UW_assignment/firmware_workspace/assignment_9/include/custom_lib/custom_lib.h:22:5: note: declared here
+   22 | int custom_lib_get_value(int return_value_if_nonzero);
+      |     ^~~~~~~~~~~~~~~~~~~~
+D:/UW_assignment/firmware_workspace/assignment_10/tests/lib/custom_lib/src/main.c:51:23: error: too many arguments to function 'custom_lib_get_value'
+   51 |         zassert_equal(custom_lib_get_value( -1,0), -1,
+      |                       ^~~~~~~~~~~~~~~~~~~~
+D:/UW_assignment/firmware_workspace/zephyr/subsys/testsuite/ztest/include/zephyr/ztest_assert.h:175:39: note: in definition of macro '_zassert_base'
+  175 |                 bool _ret = z_zassert(cond, _msg ? ("(" default_msg ")") : (default_msg), __FILE__,\
+      |                                       ^~~~
+D:/UW_assignment/firmware_workspace/zephyr/subsys/testsuite/ztest/include/zephyr/ztest_assert.h:189:9: note: in expansion of macro '_zassert_va'
+  189 |         _zassert_va(cond, default_msg, COND_CODE_1(__VA_OPT__(1), (__VA_ARGS__), (NULL)))
+      |         ^~~~~~~~~~~
+D:/UW_assignment/firmware_workspace/zephyr/subsys/testsuite/ztest/include/zephyr/ztest_assert.h:308:34: note: in expansion of macro 'zassert'
+  308 | #define zassert_equal(a, b, ...) zassert((a) == (b), #a " not equal to " #b, ##__VA_ARGS__)
+      |                                  ^~~~~~~
+D:/UW_assignment/firmware_workspace/assignment_10/tests/lib/custom_lib/src/main.c:51:9: note: in expansion of macro 'zassert_equal'
+   51 |         zassert_equal(custom_lib_get_value( -1,0), -1,
+      |         ^~~~~~~~~~~~~
+D:/UW_assignment/firmware_workspace/assignment_9/include/custom_lib/custom_lib.h:22:5: note: declared here
+   22 | int custom_lib_get_value(int return_value_if_nonzero);
+      |     ^~~~~~~~~~~~~~~~~~~~
+D:/UW_assignment/firmware_workspace/assignment_10/tests/lib/custom_lib/src/main.c:53:23: error: too many arguments to function 'custom_lib_get_value'
+   53 |         zassert_equal(custom_lib_get_value(0,0), 0,
+      |                       ^~~~~~~~~~~~~~~~~~~~
+D:/UW_assignment/firmware_workspace/zephyr/subsys/testsuite/ztest/include/zephyr/ztest_assert.h:175:39: note: in definition of macro '_zassert_base'
+  175 |                 bool _ret = z_zassert(cond, _msg ? ("(" default_msg ")") : (default_msg), __FILE__,\
+      |                                       ^~~~
+D:/UW_assignment/firmware_workspace/zephyr/subsys/testsuite/ztest/include/zephyr/ztest_assert.h:189:9: note: in expansion of macro '_zassert_va'
+  189 |         _zassert_va(cond, default_msg, COND_CODE_1(__VA_OPT__(1), (__VA_ARGS__), (NULL)))
+      |         ^~~~~~~~~~~
+D:/UW_assignment/firmware_workspace/zephyr/subsys/testsuite/ztest/include/zephyr/ztest_assert.h:308:34: note: in expansion of macro 'zassert'
+  308 | #define zassert_equal(a, b, ...) zassert((a) == (b), #a " not equal to " #b, ##__VA_ARGS__)
+      |                                  ^~~~~~~
+D:/UW_assignment/firmware_workspace/assignment_10/tests/lib/custom_lib/src/main.c:53:9: note: in expansion of macro 'zassert_equal'
+   53 |         zassert_equal(custom_lib_get_value(0,0), 0,
+      |         ^~~~~~~~~~~~~
+D:/UW_assignment/firmware_workspace/assignment_9/include/custom_lib/custom_lib.h:22:5: note: declared here
+   22 | int custom_lib_get_value(int return_value_if_nonzero);
+      |     ^~~~~~~~~~~~~~~~~~~~
+cc1.exe: all warnings being treated as errors
+[18/163] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/crc32c_sw.c.obj
+[19/163] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/heap-validate.c.obj
+[20/163] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/crc16_sw.c.obj
+[21/163] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/notify.c.obj
+[22/163] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/crc32_sw.c.obj
+[23/163] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/multi_heap.c.obj
+[24/163] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/bitarray.c.obj
+[25/163] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/heap.c.obj
+[26/163] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/onoff.c.obj
+ninja: build stopped: subcommand failed.
