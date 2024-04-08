@@ -11,3 +11,8 @@ int custom_lib_get_value(int return_value_if_nonzero)
 	return (return_value_if_nonzero != 0) ? return_value_if_nonzero
 		: CONFIG_CUSTOM_LIB_GET_VALUE_DEFAULT;
 }
+
+int custom_lib_add_two_number(int number_1, int number_2)
+{
+	return number_1 + number_2;
+}
