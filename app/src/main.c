@@ -110,7 +110,7 @@ static uint8_t recv_buf_[MAX_RECV_BUF_LEN];
 
 /* IOTEMBSYS: Create a buffer for receiving the OTA path */
 // TODO(mskobov): this should not be static!
-static char ota_path_[128] = "/does_not_exist/zephyr.signed.bin";
+static char ota_path_[128] = "zephyr.signed.bin";
 
 /* IOTEMBSYS: Consider provisioning a device ID. */
 static const char kDeviceId[] = "12345";
@@ -376,7 +376,7 @@ static void generic_http_request(void) {
 
 // You will need to change this to match your host
 // WARNING: This will change with each new EC2 instance!
-#define EC2_HOST "ec2-34-224-91-168.compute-1.amazonaws.com"
+#define EC2_HOST "ec2-204-236-202-14.compute-1.amazonaws.com"
 #define BACKEND_PORT 8080
 #define BACKEND_HOST EC2_HOST ":8080"
 static struct addrinfo* backend_addr_;
@@ -678,7 +678,7 @@ static void backend_ota_http_request(void) {
 // OTA Download Section
 //
 #define OTA_HTTP_PORT 80
-#define OTA_HOST "iotemb-firmware-releases.s3.amazonaws.com"
+#define OTA_HOST "nhan-iotemb-firmware-releases.s3.amazonaws.com"
 static int total_read_size;
 static int total_write_size;
 static int content_length_;
@@ -903,7 +903,7 @@ void main(void)
     settings_save_one("provisioning/boot_count", &boot_count, sizeof(boot_count));
 
     LOG_INF("boot_count: %d\n", boot_count);
-
+	LOG_INF("Version: 1.1");
 	/* IOTEMBSYS: Configure joystick GPIOs. */
 	init_joystick_gpio(&sw0, &button_cb_data_0);
 	init_joystick_gpio(&sw1, &button_cb_data_1);
@@ -928,4 +928,3 @@ void main(void)
 		k_msleep(blink_interval_);
 	}
 }
-
